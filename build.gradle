@@ -36,6 +36,7 @@ allprojects {
         testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
         testImplementation 'org.mockito:mockito-core:5.4.0'
+
     }
 
     test {
@@ -63,6 +64,16 @@ allprojects {
 // All subprojects (located in src/*)
 subprojects {
     group = "com.app.${rootProject.name}"
+
+    dependencies {
+
+        testImplementation rootProject.sourceSets.main.output
+
+        if (project.name != "shared") {
+            implementation project(":shared")
+            testImplementation project(":shared").sourceSets.test.output
+        }
+    }
 
     sourceSets {
         main {
