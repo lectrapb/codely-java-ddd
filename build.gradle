@@ -1,0 +1,135 @@
+
+// Main project (located in app/)
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:3.1.2.RELEASE")
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.2'
+    id 'io.spring.dependency-management' version '1.1.2'
+}
+
+// Common for all projects
+allprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = 17
+    targetCompatibility = 17
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        // Prod
+
+        // Test
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    }
+
+    test {
+        useJUnitPlatform()
+
+        testLogging {
+            events "passed", "skipped", "failed"
+        }
+    }
+
+
+    task view_paths {
+        doLast { task ->
+            println "$task.project.name"
+            println "------------------"
+            println "   Main: $sourceSets.main.java.srcDirTrees"
+            println "   Resources: $sourceSets.main.resources.srcDirTrees"
+            println "   Tests: $sourceSets.test.java.srcDirTrees"
+            println "   Resources: $sourceSets.test.resources.srcDirTrees"
+        }
+    }
+}
+
+
+// All subprojects (located in src/*)
+subprojects {
+    group = "com.app.${rootProject.name}"
+
+    sourceSets {
+        main {
+            java { srcDirs = ['main'] }
+            resources { srcDirs = ['main/resources'] }
+        }
+
+        test {
+            java { srcDirs = ['test'] }
+            resources { srcDirs = ['test/resources'] }
+        }
+    }
+}
+
+
+
+sourceSets {
+    main {
+        java { srcDirs = ['app/main'] }
+        resources { srcDirs = ['app/main/resources'] }
+    }
+
+    test {
+        java { srcDirs = ['app/test'] }
+        resources { srcDirs = ['app/test/resources'] }
+    }
+}
+
+
+
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+mainClassName = 'com.app.Starter'
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation project(":backoffice")
+
+    implementation "org.springframework.boot:spring-boot-starter-test"
+}
+
+
+//Create modules, please configure module in setting gradle before to add it
+task setupBackofficeProject {
+    doLast {
+        def backofficeDir = project(':backoffice').projectDir
+
+        file("${backofficeDir}/main/com/app").mkdirs()
+        file("${backofficeDir}/test/com/app").mkdirs()
+
+        def backofficeDir2 = project(':mooc').projectDir
+
+        file("${backofficeDir2}/main/com/app").mkdirs()
+        file("${backofficeDir2}/test/com/app").mkdirs()
+
+        def backofficeDir3 = project(':shared').projectDir
+
+        file("${backofficeDir3}/main/com/app").mkdirs()
+        file("${backofficeDir3}/test/com/app").mkdirs()
+    }
+}
+
+tasks.named('build').configure {
+    dependsOn setupBackofficeProject
+}
+
+
+
+
+
+
+
