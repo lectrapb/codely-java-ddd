@@ -104,24 +104,24 @@ dependencies {
 
 
 //Create modules, please configure module in setting gradle before to add it
-task setupBackofficeProject {
-    doLast {
-        def backofficeDir = project(':backoffice').projectDir
-
-        file("${backofficeDir}/main/com/app").mkdirs()
-        file("${backofficeDir}/test/com/app").mkdirs()
-
-        def backofficeDir2 = project(':mooc').projectDir
-
-        file("${backofficeDir2}/main/com/app").mkdirs()
-        file("${backofficeDir2}/test/com/app").mkdirs()
-
-        def backofficeDir3 = project(':shared').projectDir
-
-        file("${backofficeDir3}/main/com/app").mkdirs()
-        file("${backofficeDir3}/test/com/app").mkdirs()
-    }
-}
+//task setupBackofficeProject {
+//    doLast {
+//        def backofficeDir = project(':backoffice').projectDir
+//
+//        file("${backofficeDir}/main/com/app").mkdirs()
+//        file("${backofficeDir}/test/com/app").mkdirs()
+//
+//        def backofficeDir2 = project(':mooc').projectDir
+//
+//        file("${backofficeDir2}/main/com/app").mkdirs()
+//        file("${backofficeDir2}/test/com/app").mkdirs()
+//
+//        def backofficeDir3 = project(':shared').projectDir
+//
+//        file("${backofficeDir3}/main/com/app").mkdirs()
+//        file("${backofficeDir3}/test/com/app").mkdirs()
+//    }
+//}
 
 tasks.named('build').configure {
     dependsOn setupBackofficeProject
