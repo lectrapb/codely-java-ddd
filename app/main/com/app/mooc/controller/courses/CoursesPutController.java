@@ -19,16 +19,17 @@ public class CoursesPutController {
 
     @PutMapping("/courses/{id}")
     public ResponseEntity created(@PathVariable String id,
-                                  @RequestBody  Request request ){
+                                  @RequestBody Request request) {
 
-
-       return new ResponseEntity(HttpStatus.CREATED);
+        courseCreator.create(id, request.getName(), request.getDuration());
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 
 }
+
 @Data
 @NoArgsConstructor
-final class Request{
+final class Request {
     private String name;
     private String duration;
 }

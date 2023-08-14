@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-ddd.main.iml" filepath="$PROJECT_DIR$/.idea/modules/java-ddd.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/src/mooc/java-ddd.mooc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/src/mooc/java-ddd.mooc.main.iml" />
     </modules>
   </component>
 </project>
