@@ -23,7 +23,7 @@ class CourseCreatorTest {
         var course = new Course("some-id", "some-name", "some-duration");
         //when
         doNothing().when(repository).save(any());
-        useCase.create(course.id(), course.name(), course.duration());
+        useCase.create(new CreateCourseRequest(course.id(), course.name(), course.duration()));
         //then
         verify(repository, atLeastOnce()).save(any());
     }

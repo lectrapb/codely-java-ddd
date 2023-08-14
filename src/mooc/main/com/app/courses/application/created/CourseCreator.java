@@ -9,9 +9,10 @@ public final class CourseCreator {
 
 
     private final CourseRepository courseRepository;
-    public void create (String id, String name, String duration){
+    public void create (CreateCourseRequest request){
 
-            var course = new Course(id, name, duration);
+            var course = new Course(request.getId(), request.getName(),
+                    request.getDuration());
             courseRepository.save(course);
     }
 }

@@ -1,6 +1,7 @@
 package com.app.mooc.controller.courses;
 
 import com.app.courses.application.created.CourseCreator;
+import com.app.courses.application.created.CreateCourseRequest;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +22,7 @@ public class CoursesPutController {
     public ResponseEntity created(@PathVariable String id,
                                   @RequestBody Request request) {
 
-        courseCreator.create(id, request.getName(), request.getDuration());
+        courseCreator.create(new CreateCourseRequest(id, request.getName(), request.getDuration()));
         return new ResponseEntity(HttpStatus.CREATED);
     }
 

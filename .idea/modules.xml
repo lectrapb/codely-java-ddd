@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/src/backoffice/java-ddd.backoffice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/src/backoffice/java-ddd.backoffice.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-ddd.main.iml" filepath="$PROJECT_DIR$/.idea/modules/java-ddd.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/src/mooc/java-ddd.mooc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/src/mooc/java-ddd.mooc.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/src/shared/java-ddd.shared.main.iml" filepath="$PROJECT_DIR$/.idea/modules/src/shared/java-ddd.shared.main.iml" />
     </modules>
   </component>
 </project>
