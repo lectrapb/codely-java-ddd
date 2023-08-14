@@ -1,5 +1,7 @@
 package com.app.mooc.controller.courses;
 
+import com.app.courses.application.created.CourseCreator;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -10,11 +12,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@AllArgsConstructor
 public class CoursesPutController {
+
+    private final CourseCreator courseCreator;
 
     @PutMapping("/courses/{id}")
     public ResponseEntity created(@PathVariable String id,
                                   @RequestBody  Request request ){
+
 
        return new ResponseEntity(HttpStatus.CREATED);
     }
