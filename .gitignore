@@ -2,4 +2,5 @@
 .gradle
 build/
 
-
+# Idea
+.idea
