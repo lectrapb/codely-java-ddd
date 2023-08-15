@@ -11,12 +11,8 @@ Y
 Oapp/test/com/app/mooc/controller/health_check/HealthCheckGetControllerTest.java,d/4/d4042d3c5c3a727b1074c1e1e6180523a4a49058
 ?
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
-`
-0src/mooc/main/com/app/courses/domain/Course.java,b/6/b66300fecdcd3285ba99499c56caa140a2133424
 j
 :src/mooc/main/com/app/courses/domain/CourseRepository.java,8/9/89a18ebcb2dec41dbb2dac7d11a2e331f02f7289
-{
-Ksrc/mooc/main/com/app/courses/infraestructure/InMemoryCourseRepository.java,6/7/6755af30e11c783d1a3e8a1adffe825754197886
 7
 gradlew,5/b/5bbfa66edb4db3c7c33c5181f43510990d3307f9
 U
@@ -32,14 +28,8 @@ U
 %src/backoffice/test/com/app/test.java,7/d/7d2429b95318279c9e77fd6d2c3fe9a15efa9ffc
 z
 Jsrc/mooc/main/com/app/courses/application/created/CreateCourseRequest.java,2/7/277ec3979a8e8513b0f0fa5782e2b98207b58a33
-x
-Hsrc/mooc/test/com/app/courses/application/created/CourseCreatorTest.java,6/c/6c61cb02db35700cbae438ec6ab51031168159b4
-
-Osrc/mooc/test/com/app/courses/infraestructure/InMemoryCourseRepositoryTest.java,1/5/152de94d79d0a358c88e524e82f0a4353c7115ce
 r
 Bapp/main/com/app/mooc/controller/courses/CoursesPutController.java,e/a/ea96ac409c2ab751f07fdec1f5885f76e896db95
-t
-Dsrc/mooc/main/com/app/courses/application/created/CourseCreator.java,1/0/100a9a972ec527b96874c8e2e1e3f683a6545a5a
 w
 Gsrc/mooc/main/com/app/courses/infraestructure/config/UseCaseConfig.java,4/a/4ab4d68ceaba567990116f40125ff6fde6e5c598
 x

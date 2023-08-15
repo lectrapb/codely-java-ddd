@@ -1,4 +1,4 @@
-package com.app.courses.application.created;
+package com.app.courses.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

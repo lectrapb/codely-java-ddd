@@ -15,7 +15,7 @@ public class InMemoryCourseRepository implements CourseRepository {
     private Map<String, Course> courses = new HashMap<>();
     @Override
     public void save(Course course) {
-        this.courses.put(course.id() , course);
+        this.courses.put(course.id().value() , course);
     }
 
     @Override
