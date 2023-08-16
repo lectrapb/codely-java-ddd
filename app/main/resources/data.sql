@@ -1,0 +1,1 @@
+INSERT INTO courses (id, name,duration ) VALUES('32323', 'ddd', '8');

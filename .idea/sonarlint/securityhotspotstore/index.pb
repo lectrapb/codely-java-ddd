@@ -38,8 +38,6 @@ s
 Csrc/mooc/test/com/app/courses/domain/CreateCourseRequestMother.java,d/8/d8e3759a45d155d64e4c3301b8351d5c2a4391ed
 j
 :src/mooc/test/com/app/courses/domain/CourseNameMother.java,3/b/3b85c0a28064120bc5bb674467f2e60b2c0f25f1
-`
-0src/mooc/main/com/app/courses/domain/Course.java,b/6/b66300fecdcd3285ba99499c56caa140a2133424
 h
 8src/mooc/main/com/app/courses/domain/CourseDuration.java,e/d/ed5daacee89e5c662bb0066dd67f351735f1fd8a
 w
