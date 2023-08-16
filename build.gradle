@@ -15,6 +15,9 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.2'
 }
 
+//Label spring version
+def springVersion = '3.1.2'
+
 // Common for all projects
 allprojects {
     apply plugin: 'java'
@@ -32,12 +35,16 @@ allprojects {
         annotationProcessor 'org.projectlombok:lombok:1.18.22'
         compileOnly 'org.projectlombok:lombok:1.18.22'
         implementation 'com.google.code.gson:gson:2.10.1'
+        // DataBase
+        implementation "org.springframework.data:spring-data-jpa:${springVersion}"
+        implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springVersion}"
+        runtimeOnly    'com.h2database:h2:2.1.214'
         // Test
         testImplementation 'com.github.javafaker:javafaker:1.0.1'
         testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
         testImplementation 'org.mockito:mockito-core:5.4.0'
-        testImplementation 'org.springframework.boot:spring-boot-starter-test:3.1.2'
+        //testImplementation 'org.springframework.boot:spring-boot-starter-test:3.1.2'
 
     }
 
@@ -68,10 +75,11 @@ subprojects {
     group = "com.app.${rootProject.name}"
 
     dependencies {
-        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation "org.springframework.boot:spring-boot-starter-web:${springVersion}"
+
 
         testImplementation rootProject.sourceSets.main.output
-        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation "org.springframework.boot:spring-boot-starter-test:${springVersion}"
 
         //Share with all projects
         if (project.name != "shared") {
