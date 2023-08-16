@@ -1,10 +1,9 @@
 package com.app.courses.application.created;
 
-import com.app.courses.domain.*;
+import com.app.courses.domain.CourseRepository;
+import com.app.courses.domain.CreateCourseRequestMother;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.UUID;
 
 import static org.mockito.Mockito.*;
 
@@ -19,15 +18,14 @@ class CourseCreatorTest {
     }
 
     @Test
-    void create() {
+    void create_a_valid_course() {
         //given
-        var course = new Course( new CourseId(UUID.randomUUID().toString()), new CourseName("some-name"),
-                new CourseDuration("some-duration"));
+        var course = CreateCourseRequestMother.random();
         //when
         doNothing().when(repository).save(any());
-        useCase.create(new CreateCourseRequest(course.id().value(), course.name().value(),
-                course.duration().value()));
+        useCase.create(course);
         //then
-        verify(repository, atLeastOnce()).save(any());
+        verify(repository, atLeastOnce())
+                .save(any());
     }
 }

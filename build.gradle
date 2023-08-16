@@ -33,9 +33,11 @@ allprojects {
         compileOnly 'org.projectlombok:lombok:1.18.22'
         implementation 'com.google.code.gson:gson:2.10.1'
         // Test
+        testImplementation 'com.github.javafaker:javafaker:1.0.1'
         testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
         testImplementation 'org.mockito:mockito-core:5.4.0'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test:3.1.2'
 
     }
 
@@ -66,9 +68,12 @@ subprojects {
     group = "com.app.${rootProject.name}"
 
     dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-web'
 
         testImplementation rootProject.sourceSets.main.output
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+        //Share with all projects
         if (project.name != "shared") {
             implementation project(":shared")
             testImplementation project(":shared").sourceSets.test.output
@@ -112,6 +117,7 @@ mainClassName = 'com.app.Starter'
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
+    implementation project(":shared")
     implementation project(":backoffice")
     implementation project(":mooc")
 

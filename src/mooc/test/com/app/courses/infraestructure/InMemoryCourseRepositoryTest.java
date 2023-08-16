@@ -1,44 +1,36 @@
 package com.app.courses.infraestructure;
 
-import com.app.courses.domain.Course;
-import com.app.courses.domain.CourseDuration;
-import com.app.courses.domain.CourseId;
-import com.app.courses.domain.CourseName;
+import com.app.courses.domain.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class InMemoryCourseRepositoryTest {
+class InMemoryCourseRepositoryTest extends CourseModuleInfrastructureTestCase {
 
     private InMemoryCourseRepository repository;
-    private static final String UID = UUID.randomUUID().toString();
+
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         repository = new InMemoryCourseRepository();
     }
+
     @Test
     void save_a_valid_course() {
 
-        repository.save(getCourse());
-    }
-
-    private static Course getCourse() {
-        return new Course(new CourseId(UID), new CourseName("some-name"),
-                new CourseDuration("some-duration"));
+        repository.save(CourseMother.random());
     }
 
     @Test
-    void search_an_existing_course()  {
+    void search_an_existing_course() {
         //given
-        var course = getCourse();
+        var course = CourseMother.random();
         //when
         repository.save(course);
-        var result = repository.search(UID);
+        var result = repository.search(course.id().value());
         //Then
         assertEquals(course, result.get());
     }
@@ -46,7 +38,7 @@ class InMemoryCourseRepositoryTest {
     @Test
     void not_find_a_non_existing_course() {
         //given
-        var course = getCourse();
+        var course = CourseMother.random();
         //Then
         assertNotEquals(Optional.of(course), repository.search("some-id1"));
     }
