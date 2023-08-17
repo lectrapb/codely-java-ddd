@@ -2,6 +2,7 @@ package com.app.courses.infraestructure.config;
 
 import com.app.courses.application.created.CourseCreator;
 import com.app.courses.domain.CourseRepository;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class UseCaseConfig {
 
      @Bean
-     public CourseCreator courseCreator(CourseRepository courseRepository){
+     public CourseCreator courseCreator(@Qualifier("h2-repository") CourseRepository courseRepository){
          return new CourseCreator(courseRepository);
      }
 }

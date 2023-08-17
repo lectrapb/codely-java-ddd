@@ -26,8 +26,6 @@ U
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-w
-Gsrc/mooc/main/com/app/courses/infraestructure/config/UseCaseConfig.java,4/a/4ab4d68ceaba567990116f40125ff6fde6e5c598
 r
 Bapp/main/com/app/mooc/controller/courses/CoursesPutController.java,e/a/ea96ac409c2ab751f07fdec1f5885f76e896db95
 m
@@ -42,5 +40,15 @@ h
 8src/mooc/main/com/app/courses/domain/CourseDuration.java,e/d/ed5daacee89e5c662bb0066dd67f351735f1fd8a
 w
 Gapp/test/com/app/mooc/controller/courses/CreateCourseRequestMother.java,0/3/033c83a188e16d11cd14b2764ae7b8934aab058a
-x
-Happ/test/com/app/mooc/controller/courses/CoursesPutControllerShould.java,7/6/764abb9c66b46dfb87b0f5febb9cd96ca5a5d7d0
+^
+.src/shared/test/com/app/domain/WordMother.java,e/0/e0b20a51eb8972cbb3b27c6fd4a5a0c795f061e8
+
+Osrc/mooc/test/com/app/courses/infraestructure/InMemoryCourseRepositoryTest.java,1/5/152de94d79d0a358c88e524e82f0a4353c7115ce
+…
+Usrc/mooc/test/com/app/courses/infraestructure/CourseModuleInfrastructureTestCase.java,5/7/57e7b572de5876e7900a936070e43a9c3748dab8
+s
+Csrc/shared/test/com/app/infraestructure/InfrastructureTestCase.java,8/2/82a146fd7f1ddb54818f40be840b43d5e91ccc1a
+<
+build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
+`
+0src/mooc/main/com/app/courses/domain/Course.java,b/6/b66300fecdcd3285ba99499c56caa140a2133424

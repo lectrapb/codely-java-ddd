@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-@Repository
+@Repository("in-memory")
 public class InMemoryCourseRepository implements CourseRepository {
 
     private Map<String, Course> courses = new HashMap<>();
