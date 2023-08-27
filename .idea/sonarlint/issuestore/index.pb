@@ -44,8 +44,6 @@ Nsrc/mooc/main/com/app/courses/infraestructure/database/application/Mapper.java
 Usrc/mooc/main/com/app/courses/infraestructure/database/infra/JPACourseRepository.java,1/f/1f12989dbf11b6f0fe85de19892ed67a83b777e0
 Š
 Zsrc/mooc/main/com/app/courses/infraestructure/database/application/H2CourseRepository.java,0/a/0a15b3ba8c748d2145aa9145121c6247d1a8737f
-k
-;src/shared/main/com/app/infraestructure/ConsoleCommand.java,1/6/16666d4885d3a6a83e987084adc4d9e92891bfb4
 N
 app/main/com/app/Starter3.java,1/7/173b0fde73a552d6ba22d1e94c3fa4ef4ff0936b
 M
