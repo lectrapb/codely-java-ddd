@@ -1,4 +1,6 @@
-package com.app.courses.domain;
+package com.app.courses.domain.gateway;
+
+import com.app.courses.domain.Course;
 
 import java.util.Optional;
 

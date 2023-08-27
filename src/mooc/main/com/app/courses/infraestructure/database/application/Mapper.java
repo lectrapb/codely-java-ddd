@@ -1,9 +1,9 @@
 package com.app.courses.infraestructure.database.application;
 
 import com.app.courses.domain.Course;
-import com.app.courses.domain.CourseDuration;
-import com.app.courses.domain.CourseId;
-import com.app.courses.domain.CourseName;
+import com.app.courses.domain.value.CourseDuration;
+import com.app.courses.domain.value.CourseId;
+import com.app.courses.domain.value.CourseName;
 import com.app.courses.infraestructure.database.domain.CourseData;
 
 public class Mapper {

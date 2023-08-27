@@ -1,15 +1,15 @@
 package com.app.courses.infraestructure.database.application;
 
 import com.app.courses.domain.Course;
-import com.app.courses.domain.CourseRepository;
+import com.app.courses.domain.gateway.CourseRepository;
 import com.app.courses.infraestructure.database.infra.JPACourseRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-@Service("h2-repository")
+@Repository("h2-repository")
 @AllArgsConstructor
 public class H2CourseRepository implements CourseRepository {
 

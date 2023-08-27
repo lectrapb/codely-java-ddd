@@ -3,7 +3,7 @@ package com.app.courses.infraestructure;
 
 import org.springframework.stereotype.Repository;
 import com.app.courses.domain.Course;
-import com.app.courses.domain.CourseRepository;
+import com.app.courses.domain.gateway.CourseRepository;
 
 import java.util.HashMap;
 import java.util.Map;

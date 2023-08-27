@@ -1,6 +1,8 @@
 package com.app.courses.domain;
 
-import com.github.javafaker.Faker;
+import com.app.courses.domain.value.CourseDuration;
+import com.app.courses.domain.value.CourseId;
+import com.app.courses.domain.value.CourseName;
 
 import java.util.UUID;
 

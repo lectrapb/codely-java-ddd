@@ -1,5 +1,6 @@
 package com.app.courses.domain;
 
+import com.app.courses.domain.value.CourseName;
 import com.app.domain.WordMother;
 
 public class CourseNameMother {

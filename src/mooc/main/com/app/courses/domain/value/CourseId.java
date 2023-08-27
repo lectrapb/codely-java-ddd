@@ -1,4 +1,4 @@
-package com.app.courses.domain;
+package com.app.courses.domain.value;
 import com.app.domain.Identifier;
 
 import java.util.UUID;
