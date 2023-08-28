@@ -1,1 +1,2 @@
-INSERT INTO courses (id, name,duration ) VALUES('32323', 'ddd', '8');
+INSERT INTO courses (id, name,duration ) VALUES('f3f65f9a-0775-44c5-a532-611e8d586ae3', 'ddd', '8');
+INSERT INTO courses_counter (courses_counter_id, courses_counter_total ) VALUES('f3f65f9a-0775-44c5-a532-611e8d586ae3', 0);

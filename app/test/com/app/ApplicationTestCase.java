@@ -1,6 +1,8 @@
 package com.app;
 
 
+import com.app.domain.bus.DomainEvent;
+import com.app.domain.bus.EventBus;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -10,6 +12,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
+
+import java.util.Arrays;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -25,6 +29,9 @@ public abstract class ApplicationTestCase {
 
     @Autowired
     private MockMvc mockMvc;
+
+    @Autowired
+    private EventBus eventBus;
 
 
     protected void assertResponse(
@@ -68,6 +75,10 @@ public abstract class ApplicationTestCase {
                 .perform(request(HttpMethod.valueOf(method), endpoint).content(body).contentType(APPLICATION_JSON))
                 .andExpect(status().is(expectedStatusCode))
                 .andExpect(content().string(""));
+    }
+
+    protected void givenISendEventsToTheBus(DomainEvent<?>... domainEvents) {
+        eventBus.publish(Arrays.asList(domainEvents));
     }
 
 }
