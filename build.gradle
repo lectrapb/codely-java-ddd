@@ -39,6 +39,9 @@ allprojects {
         implementation "org.springframework.data:spring-data-jpa:${springVersion}"
         implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springVersion}"
         runtimeOnly    'com.h2database:h2:2.1.214'
+        //Json
+        implementation 'io.hypersistence:hypersistence-utils-hibernate-60:3.5.2'
+        implementation 'com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations:2.15.2'
         // Test
         testImplementation 'com.github.javafaker:javafaker:1.0.1'
         testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
