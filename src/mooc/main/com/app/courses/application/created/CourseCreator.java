@@ -16,7 +16,9 @@ public final class CourseCreator {
     private final EventBus eventBus;
     public void create (CreateCourseRequest request){
 
-            var course = Course.create(new CourseId(request.getId()), new CourseName(request.getName()),
+            var course = Course.create(
+                    new CourseId(request.getId()),
+                    new CourseName(request.getName()),
                     new CourseDuration(request.getDuration()));
 
             courseRepository.save(course);

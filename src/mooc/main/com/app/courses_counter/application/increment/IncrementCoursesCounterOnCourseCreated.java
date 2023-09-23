@@ -5,6 +5,7 @@ import com.app.courses.domain.value.CourseId;
 import lombok.AllArgsConstructor;
 import org.springframework.context.event.EventListener;
 
+//java-ddd/src/mooc/main/com/app/courses_counter/application/increment/IncrementCoursesCounterOnCourseCreated.java
 @AllArgsConstructor
 public class IncrementCoursesCounterOnCourseCreated {
 

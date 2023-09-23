@@ -22,17 +22,21 @@ public class CourseCounterSearchAdapter implements CoursesCounterSearchRepositor
     @Override
     public Optional<CoursesCounter> search() {
         var countersData = repository.findAll();
-        if(!countersData.isEmpty() ){
-            var data = countersData.get(0);
-            var map = data.getData();
-            List<CourseId> ids = new ArrayList<>();
-            if(map != null && !map.isEmpty()){
-                for(String key : map.keySet()){ ids.add(new CourseId(key));};
-            }
 
-            return Optional.of(new CoursesCounter(new CoursesCounterId(data.getId()),
-                    new CoursesCounterTotal(data.getTotal()), ids));
+        if (countersData.isEmpty()) {
+            return Optional.empty();
         }
-        return Optional.empty();
+
+        var data = countersData.get(0);
+        var map = data.getData();
+        List<CourseId> ids = new ArrayList<>();
+        if (map != null && !map.isEmpty()) {
+            for (String key : map.keySet()) {
+                ids.add(new CourseId(key));
+            }
+        }
+
+        return Optional.of(new CoursesCounter(new CoursesCounterId(data.getId()),
+                new CoursesCounterTotal(data.getTotal()), ids));
     }
 }

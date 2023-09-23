@@ -1,7 +1,7 @@
 package com.app.courses_counter.domain.value;
 
 import com.app.domain.LongValueObject;
-
+//java-ddd/src/mooc/main/com/app/courses_counter/domain/CoursesCounter.java
 public class CoursesCounterTotal extends LongValueObject {
     public CoursesCounterTotal(Long value) {
         super(value);

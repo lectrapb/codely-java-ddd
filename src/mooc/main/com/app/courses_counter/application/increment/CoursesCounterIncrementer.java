@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 
 import java.util.UUID;
 
+
 @AllArgsConstructor
 public class CoursesCounterIncrementer {
 
