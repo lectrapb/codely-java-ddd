@@ -1,14 +1,14 @@
 package com.app.infraestructure.bus.event.mysql.domain;
 
 import io.hypersistence.utils.hibernate.type.json.JsonType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.Type;
+import org.springframework.data.annotation.CreatedDate;
+
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -49,6 +49,10 @@ public abstract class ApplicationTestCase {
                 .andExpect(response);
     }
 
+    protected void givenISendEventsToTheBus(DomainEvent<?>... domainEvents) {
+        eventBus.publish(Arrays.asList(domainEvents));
+    }
+
     protected void assertResponse(
             String endpoint,
             Integer expectedStatusCode,
@@ -75,10 +79,6 @@ public abstract class ApplicationTestCase {
                 .perform(request(HttpMethod.valueOf(method), endpoint).content(body).contentType(APPLICATION_JSON))
                 .andExpect(status().is(expectedStatusCode))
                 .andExpect(content().string(""));
-    }
-
-    protected void givenISendEventsToTheBus(DomainEvent<?>... domainEvents) {
-        eventBus.publish(Arrays.asList(domainEvents));
     }
 
 }

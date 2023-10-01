@@ -11,6 +11,10 @@ public class CourseCreatedDomainEvent extends DomainEvent<CourseCreatedDomainEve
     private String name;
     private String duration;
 
+    public CourseCreatedDomainEvent() {
+        super();
+    }
+
     public CourseCreatedDomainEvent(String aggregateId, String name, String duration) {
         super(aggregateId);
 
@@ -30,6 +34,8 @@ public class CourseCreatedDomainEvent extends DomainEvent<CourseCreatedDomainEve
         this.name     = name;
         this.duration = duration;
     }
+
+
 
     @Override
     public String eventName() {

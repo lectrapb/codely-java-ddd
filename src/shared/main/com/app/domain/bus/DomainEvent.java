@@ -2,20 +2,27 @@ package com.app.domain.bus;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.UUID;
 
 public abstract class DomainEvent<T extends DomainEvent<?>> {
 
+    public static final String TIME_FORMAT = "yyyy-MM-dd HH:mm:ss:SSSSSSSSS";
+    DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern(TIME_FORMAT);
     private String aggregateId;
     private String eventId;
     private String occurredOn;
 
 
+    protected DomainEvent() {
+    }
+
     public DomainEvent(String aggregateId) {
+
         this.aggregateId  = aggregateId;
         this.eventId      = UUID.randomUUID().toString();
-        this.occurredOn   = LocalDateTime.now().toString();
+        this.occurredOn   = timeFormatter.format(LocalDateTime.now());;
     }
 
     public DomainEvent(String aggregateId, String eventId, String occurredOn) {
