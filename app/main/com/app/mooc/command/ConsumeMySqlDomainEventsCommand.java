@@ -17,8 +17,8 @@ public class ConsumeMySqlDomainEventsCommand {
         this.consumer = consumer;
     }
 
-    @Async
-    @Scheduled(fixedRate = 5000)
+//    @Async
+//    @Scheduled(fixedRate = 5000)
     public void execute(){
 
         consumer.consume();

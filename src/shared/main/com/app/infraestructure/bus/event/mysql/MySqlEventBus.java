@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
-@Primary
+//@Primary
 @Service
 @AllArgsConstructor
 public class MySqlEventBus implements EventBus {

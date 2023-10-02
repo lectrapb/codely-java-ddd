@@ -37,6 +37,7 @@ allprojects {
         implementation 'com.google.code.gson:gson:2.10.1'
         //Reflection
         implementation 'org.reflections:reflections:0.10.2'
+        implementation 'org.springframework.boot:spring-boot-starter-amqp:3.1.2'
 
         // DataBase
         implementation "org.springframework.data:spring-data-jpa:${springVersion}"
