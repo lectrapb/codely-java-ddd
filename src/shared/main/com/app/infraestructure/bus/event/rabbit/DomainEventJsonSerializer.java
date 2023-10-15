@@ -1,28 +1,21 @@
-package com.app.infraestructure.bus.event;
+package com.app.infraestructure.bus.event.rabbit;
 
 import com.app.domain.JsonSerializer;
 import com.app.domain.bus.DomainEvent;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.AbstractMap;
-import java.util.stream.Stream;
 
-public final  class DomainEventJsonSerializer {
-
-
-    private DomainEventJsonSerializer() {
-    }
+public final class DomainEventJsonSerializer {
 
     public static String serialize(DomainEvent<?> domainEvent) {
-        HashMap<String, Serializable> attributes = (HashMap<String, Serializable>)domainEvent.toPrimitives();
+        HashMap<String, Serializable> attributes = (HashMap<String, Serializable> )domainEvent.toPrimitives();
         attributes.put("id", domainEvent.aggregateId());
 
-     return JsonSerializer.jsonEncode(new HashMap<String, Serializable>() {{
+        Gson gson = new Gson();
+        HashMap<String, Serializable> data = new HashMap<>() {{
             put("data", new HashMap<String, Serializable>() {{
                 put("id", domainEvent.eventId());
                 put("type", domainEvent.eventName());
@@ -30,8 +23,8 @@ public final  class DomainEventJsonSerializer {
                 put("attributes", attributes);
             }});
             put("meta", new HashMap<String, Serializable>());
-        }});
+        }};
+
+        return JsonSerializer.jsonEncode(data);
     }
-
-
 }

@@ -31,3 +31,8 @@ spring:
   sql:
     init:
       mode: always
+  rabbitmq:
+    host: localhost
+    port: 8888
+    username: cablanco
+    password: 12345678

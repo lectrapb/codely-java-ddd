@@ -5,6 +5,7 @@ import com.app.domain.bus.DomainEvent;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 import org.reflections.Reflections;
@@ -42,5 +43,13 @@ public class DomainEventsInformation {
         }
 
         return events;
+    }
+
+    public String forClass(Class<? extends DomainEvent<?>> domainEventClass) {
+        return indexedDomainEvents.entrySet()
+                .stream()
+                .filter(entry -> Objects.equals(entry.getValue(), domainEventClass))
+                .map(Map.Entry::getKey)
+                .findFirst().orElse("");
     }
 }
