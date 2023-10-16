@@ -1,6 +1,6 @@
 package com.app.courses.domain.events;
 
-import com.app.domain.bus.DomainEvent;
+import com.app.domain.bus.event.DomainEvent;
 
 import java.io.Serializable;
 import java.util.HashMap;

@@ -1,7 +1,7 @@
 package com.app.infraestructure.bus.event.rabbit;
 
-import com.app.domain.bus.DomainEvent;
-import com.app.domain.bus.EventBus;
+import com.app.domain.bus.event.DomainEvent;
+import com.app.domain.bus.event.EventBus;
 import com.app.infraestructure.bus.event.DomainEventJsonSerializer;
 import com.app.infraestructure.bus.event.mysql.MySqlEventBus;
 import org.springframework.amqp.AmqpException;

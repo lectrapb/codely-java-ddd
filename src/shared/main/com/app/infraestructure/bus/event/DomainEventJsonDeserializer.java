@@ -2,15 +2,12 @@ package com.app.infraestructure.bus.event;
 
 
 import com.app.domain.JsonSerializer;
-import com.app.domain.bus.DomainEvent;
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
+import com.app.domain.bus.event.DomainEvent;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.HashMap;
 import java.util.Map;
 
 @Service

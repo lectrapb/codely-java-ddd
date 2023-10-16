@@ -1,6 +1,6 @@
 package com.app.infraestructure.bus.event.rabbit;
 
-import com.app.infraestructure.bus.event.DomainEventSubscriber;
+import com.app.domain.bus.event.DomainEventSubscriber;
 import com.app.infraestructure.bus.event.DomainEventSubscriberInformation;
 import org.reflections.Reflections;
 import org.springframework.stereotype.Service;

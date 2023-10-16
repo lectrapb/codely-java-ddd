@@ -1,4 +1,6 @@
-package com.app.domain.bus;
+package com.app.domain.bus.event;
+
+import com.app.domain.bus.event.DomainEvent;
 
 import java.util.List;
 

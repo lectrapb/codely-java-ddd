@@ -1,6 +1,6 @@
 package com.app.infraestructure.bus.event.mysql;
 
-import com.app.domain.bus.DomainEvent;
+import com.app.domain.bus.event.DomainEvent;
 import com.app.infraestructure.bus.event.DomainEventsInformation;
 import com.app.infraestructure.bus.event.mysql.domain.DomainEventData;
 import com.app.infraestructure.bus.event.mysql.infra.JPAEventBusRepository;

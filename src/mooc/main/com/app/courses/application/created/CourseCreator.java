@@ -5,7 +5,7 @@ import com.app.courses.domain.gateway.CourseRepository;
 import com.app.courses.domain.value.CourseDuration;
 import com.app.courses.domain.value.CourseId;
 import com.app.courses.domain.value.CourseName;
-import com.app.domain.bus.EventBus;
+import com.app.domain.bus.event.EventBus;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -14,15 +14,13 @@ public final class CourseCreator {
 
     private final CourseRepository courseRepository;
     private final EventBus eventBus;
-    public void create (CreateCourseRequest request){
 
-            var course = Course.create(
-                    new CourseId(request.getId()),
-                    new CourseName(request.getName()),
-                    new CourseDuration(request.getDuration()));
+    public void create( CourseId id, CourseName name, CourseDuration duration) {
 
-            courseRepository.save(course);
+        var course = Course.create(id, name, duration);
 
-            eventBus.publish(course.pullDomainEvents());
+        courseRepository.save(course);
+
+        eventBus.publish(course.pullDomainEvents());
     }
 }

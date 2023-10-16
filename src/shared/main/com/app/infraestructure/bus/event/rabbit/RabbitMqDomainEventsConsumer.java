@@ -1,8 +1,7 @@
 package com.app.infraestructure.bus.event.rabbit;
 
-import com.app.domain.bus.DomainEvent;
+import com.app.domain.bus.event.DomainEvent;
 import com.app.infraestructure.bus.event.DomainEventJsonDeserializer;
-import com.app.infraestructure.bus.event.RabbitMqExchangeNameFormatter;
 import com.google.common.base.CaseFormat;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;

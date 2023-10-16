@@ -1,8 +1,8 @@
 package com.app;
 
 
-import com.app.domain.bus.DomainEvent;
-import com.app.domain.bus.EventBus;
+import com.app.domain.bus.event.DomainEvent;
+import com.app.domain.bus.event.EventBus;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

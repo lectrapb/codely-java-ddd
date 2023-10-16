@@ -1,6 +1,6 @@
-package com.app.infraestructure.bus.event;
+package com.app.domain.bus.event;
 
-import com.app.domain.bus.DomainEvent;
+import com.app.domain.bus.event.DomainEvent;
 
 import java.lang.annotation.*;
 

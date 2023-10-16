@@ -2,9 +2,15 @@ package com.app.courses.application.created;
 
 import com.app.courses.domain.gateway.CourseRepository;
 import com.app.courses.domain.CreateCourseRequestMother;
-import com.app.domain.bus.EventBus;
+import com.app.courses.domain.value.CourseDuration;
+import com.app.courses.domain.value.CourseId;
+import com.app.courses.domain.value.CourseName;
+import com.app.domain.bus.event.EventBus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.Date;
+import java.util.UUID;
 
 import static org.mockito.Mockito.*;
 
@@ -27,7 +33,8 @@ class CourseCreatorTest {
         //when
         doNothing().when(repository).save(any());
         doNothing().when(eventBus).publish(any());
-        useCase.create(course);
+        useCase.create(new CourseId(UUID.randomUUID().toString()), new CourseName("test"),
+                new CourseDuration(new Date().toString()));
         //then
         verify(repository, atLeastOnce())
                 .save(any());

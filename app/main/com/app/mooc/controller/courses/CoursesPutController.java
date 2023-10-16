@@ -1,7 +1,8 @@
 package com.app.mooc.controller.courses;
 
-import com.app.courses.application.created.CourseCreator;
-import com.app.courses.domain.CreateCourseRequest;
+import com.app.courses.application.created.CreateCourseCommand;
+import com.app.domain.bus.command.CommandBus;
+import com.app.domain.bus.command.CommandNotRegisteredError;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,13 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class CoursesPutController {
 
-    private final CourseCreator courseCreator;
+    private final  CommandBus bus;
+
 
     @PutMapping("/courses/{id}")
     public ResponseEntity created(@PathVariable String id,
-                                  @RequestBody Request request) {
-
-        courseCreator.create(new CreateCourseRequest(id, request.getName(), request.getDuration()));
+                                  @RequestBody Request request) throws CommandNotRegisteredError {
+        bus.dispatch(new CreateCourseCommand(id, request.getName(), request.getDuration()));
         return new ResponseEntity(HttpStatus.CREATED);
     }
 

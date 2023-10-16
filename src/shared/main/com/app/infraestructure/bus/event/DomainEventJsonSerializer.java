@@ -1,16 +1,10 @@
 package com.app.infraestructure.bus.event;
 
 import com.app.domain.JsonSerializer;
-import com.app.domain.bus.DomainEvent;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
+import com.app.domain.bus.event.DomainEvent;
 
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.AbstractMap;
-import java.util.stream.Stream;
 
 public final  class DomainEventJsonSerializer {
 

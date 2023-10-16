@@ -1,7 +1,7 @@
 package com.app.infraestructure.bus.event.spring;
 
-import com.app.domain.bus.DomainEvent;
-import com.app.domain.bus.EventBus;
+import com.app.domain.bus.event.DomainEvent;
+import com.app.domain.bus.event.EventBus;
 import lombok.AllArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;

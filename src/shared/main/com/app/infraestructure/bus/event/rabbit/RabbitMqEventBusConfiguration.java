@@ -1,7 +1,6 @@
 package com.app.infraestructure.bus.event.rabbit;
 
 import com.app.infraestructure.bus.event.DomainEventsInformation;
-import com.app.infraestructure.bus.event.RabbitMqExchangeNameFormatter;
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

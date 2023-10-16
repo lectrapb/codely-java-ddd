@@ -2,9 +2,8 @@ package com.app.courses_counter.application.increment;
 
 import com.app.courses.domain.events.CourseCreatedDomainEvent;
 import com.app.courses.domain.value.CourseId;
-import com.app.infraestructure.bus.event.DomainEventSubscriber;
+import com.app.domain.bus.event.DomainEventSubscriber;
 import lombok.AllArgsConstructor;
-import org.springframework.context.event.EventListener;
 
 //java-ddd/src/mooc/main/com/app/courses_counter/application/increment/IncrementCoursesCounterOnCourseCreated.java
 @AllArgsConstructor

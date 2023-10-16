@@ -1,4 +1,4 @@
-package com.app.infraestructure.bus.event;
+package com.app.infraestructure.bus.event.rabbit;
 
 public class RabbitMqExchangeNameFormatter {
     public static String retry(String exchangeName) {

@@ -1,6 +1,6 @@
 package com.app.infraestructure.bus.event.rabbit;
 
-import com.app.domain.bus.DomainEvent;
+import com.app.domain.bus.event.DomainEvent;
 import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessagePropertiesBuilder;

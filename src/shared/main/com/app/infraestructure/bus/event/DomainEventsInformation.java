@@ -1,6 +1,6 @@
 package com.app.infraestructure.bus.event;
 
-import com.app.domain.bus.DomainEvent;
+import com.app.domain.bus.event.DomainEvent;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;

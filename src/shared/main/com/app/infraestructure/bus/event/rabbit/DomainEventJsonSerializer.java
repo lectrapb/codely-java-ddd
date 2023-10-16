@@ -1,12 +1,11 @@
 package com.app.infraestructure.bus.event.rabbit;
 
 import com.app.domain.JsonSerializer;
-import com.app.domain.bus.DomainEvent;
+import com.app.domain.bus.event.DomainEvent;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.Map;
 
 public final class DomainEventJsonSerializer {
 

@@ -1,4 +1,4 @@
-package com.app.domain.bus;
+package com.app.domain.bus.event;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

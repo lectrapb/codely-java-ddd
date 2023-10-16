@@ -1,11 +1,10 @@
 package com.app.infraestructure.bus.event.mysql;
 
-import com.app.domain.bus.DomainEvent;
-import com.app.domain.bus.EventBus;
+import com.app.domain.bus.event.DomainEvent;
+import com.app.domain.bus.event.EventBus;
 import com.app.infraestructure.bus.event.mysql.domain.DomainEventData;
 import com.app.infraestructure.bus.event.mysql.infra.JPAEventBusRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

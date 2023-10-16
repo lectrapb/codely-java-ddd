@@ -1,6 +1,6 @@
 package com.app.domain;
 
-import com.app.domain.bus.DomainEvent;
+import com.app.domain.bus.event.DomainEvent;
 
 import java.util.ArrayList;
 import java.util.Collections;
