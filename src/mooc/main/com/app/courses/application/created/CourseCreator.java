@@ -20,6 +20,7 @@ public final class CourseCreator {
         var course = Course.create(id, name, duration);
 
         courseRepository.save(course);
+        var result = course.pullDomainEvents();
 
         eventBus.publish(course.pullDomainEvents());
     }
